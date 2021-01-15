@@ -71,7 +71,7 @@ const AppActions = {
 };
 
 const EXTERNAL_METHODS = [
-    'increment', 'blink', 'getState' // Add your methods here
+    'updateACL', 'subscribe', 'unsubscribe', 'tweet', 'getState'
 ];
 
 EXTERNAL_METHODS.forEach(function(x) {
