@@ -59,7 +59,7 @@ class MyApp extends React.Component {
                   cE(Send, {
                       ctx: this.props.ctx,
                       isSend: this.state.isSend,
-                      tweets: this.state.tweets
+                      myTweets: this.state.myTweets
                   }),
                   cE(rB.Panel, null,
                      cE(rB.Panel.Heading, null,

@@ -2,7 +2,7 @@ const AppConstants = require('../constants/AppConstants');
 
 const AppReducer = function(state, action) {
     if (typeof state === 'undefined') {
-        return {acl: {}, topics: {}, tweets: [], myTweets: [],
+        return {acl: {}, topics: {}, tweets: [], myTweets: [], newTweet: '',
                 isSend: false, isGroups: false, isTopics: false,
                 isClosed: false};
     } else {
