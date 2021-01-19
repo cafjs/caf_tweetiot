@@ -12,6 +12,7 @@ class Manage extends React.Component {
         this.doGroups = this.doGroups.bind(this);
         this.doTopics = this.doTopics.bind(this);
         this.doSend = this.doSend.bind(this);
+        this.doChangePin = this.doChangePin.bind(this);
     }
 
 
@@ -27,6 +28,10 @@ class Manage extends React.Component {
         AppActions.setLocalState(this.props.ctx, {isSend: true});
     }
 
+    doChangePin() {
+        AppActions.setLocalState(this.props.ctx, {isChangePin: true});
+    }
+
     render() {
         return cE(rB.ButtonGroup, null,
                   cE(rB.Button,  {
@@ -37,6 +42,10 @@ class Manage extends React.Component {
                       onClick: this.doTopics,
                       bsStyle: 'primary'
                   }, 'Topics'),
+                  cE(rB.Button,  {
+                      onClick: this.doChangePin,
+                      bsStyle: 'info'
+                  }, 'GPIO Pin'),
                   cE(rB.Button,  {
                       onClick: this.doSend,
                       bsStyle: 'danger'

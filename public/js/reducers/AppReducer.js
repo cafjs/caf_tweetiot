@@ -3,8 +3,10 @@ const AppConstants = require('../constants/AppConstants');
 const AppReducer = function(state, action) {
     if (typeof state === 'undefined') {
         return {acl: {}, topics: {}, tweets: [], myTweets: [], newTweet: '',
+                newGroup: '', newPrincipal: '', newTopic: '',
+                pinNumber: 37, newPinNumber: '',
                 isSend: false, isGroups: false, isTopics: false,
-                isClosed: false};
+                isChangePin: false, isClosed: false};
     } else {
         switch(action.type) {
         case AppConstants.APP_UPDATE:

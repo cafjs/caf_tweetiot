@@ -20,7 +20,6 @@ class Send extends React.Component {
         if (this.props.newTweet) {
             AppActions.tweet(this.props.ctx, this.props.newTweet);
             AppActions.setLocalState(this.props.ctx, {newTweet: ''});
-            this.doDismissSend(ev);
         } else {
             AppActions.setError(this.props.ctx, new Error('Empty tweet'));
         }
@@ -28,6 +27,7 @@ class Send extends React.Component {
 
     doDismissSend(ev) {
         AppActions.setLocalState(this.props.ctx, {isSend: false});
+        AppActions.setLocalState(this.props.ctx, {newTweet: ''});
     }
 
     handleTweet(ev) {
@@ -69,6 +69,12 @@ class Send extends React.Component {
                               })
                              )
                           ),
+                        cE(rB.FormGroup, {controlId: 'newTweet2Id'},
+                           cE(rB.Col, {smOffset:2, sm:6, xs: 12},
+                              cE(rB.Button, {onClick: this.doSend,
+                                             bsStyle: 'danger'}, 'Send')
+                             )
+                          ),
                         cE(rB.FormGroup, {controlId: 'tweetsId'},
                            cE(TableSentTweets, {
                                myTweets: this.props.myTweets
@@ -77,11 +83,7 @@ class Send extends React.Component {
                        )
                     ),
                   cE(rB.Modal.Footer, null,
-                     cE(rB.ButtonGroup, null,
-                        cE(rB.Button, {onClick: this.doDismissSend}, 'Cancel'),
-                        cE(rB.Button, {onClick: this.doSend, bsStyle: 'danger'},
-                           'Send')
-                       )
+                     cE(rB.Button, {onClick: this.doDismissSend}, 'Continue')
                     )
                  );
     }

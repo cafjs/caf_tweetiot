@@ -48,7 +48,7 @@
                     "name": "props",
                     "env" : {
                         "maxTweets": "process.env.MAX_TWEETS||5",
-                        "pinNumber" : "process.env.PIN_NUMBER||18"
+                        "pinNumber" : "process.env.PIN_NUMBER||37"
                     }
                 }
             ]

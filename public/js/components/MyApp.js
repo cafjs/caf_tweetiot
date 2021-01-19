@@ -10,6 +10,7 @@ const Topics = require('./Topics');
 const Send = require('./Send');
 const Manage = require('./Manage');
 const Received = require('./Received');
+const ChangePin = require('./ChangePin');
 
 const cE = React.createElement;
 
@@ -48,17 +49,28 @@ class MyApp extends React.Component {
                   }),
                   cE(Groups, {
                       ctx: this.props.ctx,
+                      aclMapName: this.state.aclMapName,
                       isGroups: this.state.isGroups,
+                      newGroup: this.state.newGroup,
+                      newPrincipal: this.state.newPrincipal,
                       acl: this.state.acl
                   }),
                   cE(Topics, {
                       ctx: this.props.ctx,
                       isTopics: this.state.isTopics,
+                      newTopic: this.state.newTopic,
                       topics: this.state.topics
+                  }),
+                  cE(ChangePin, {
+                      ctx: this.props.ctx,
+                      isChangePin: this.state.isChangePin,
+                      pinNumber: this.state.pinNumber,
+                      newPinNumber: this.state.newPinNumber
                   }),
                   cE(Send, {
                       ctx: this.props.ctx,
                       isSend: this.state.isSend,
+                      newTweet: this.state.newTweet,
                       myTweets: this.state.myTweets
                   }),
                   cE(rB.Panel, null,
@@ -95,7 +107,8 @@ class MyApp extends React.Component {
                                   ctx: this.props.ctx,
                                   isGroups: this.state.isGroups,
                                   isTopics: this.state.isTopics,
-                                  isSend: this.state.isSend
+                                  isSend: this.state.isSend,
+                                  isChangePin: this.state.isChangePin
                               })
                              )
                           ),

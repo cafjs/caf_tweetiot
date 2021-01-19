@@ -71,7 +71,7 @@ const AppActions = {
 };
 
 const EXTERNAL_METHODS = [
-    'updateACL', 'subscribe', 'unsubscribe', 'tweet', 'getState'
+    'updateACL', 'configPin', 'subscribe', 'unsubscribe', 'tweet', 'getState'
 ];
 
 EXTERNAL_METHODS.forEach(function(x) {
