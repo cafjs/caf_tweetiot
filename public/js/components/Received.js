@@ -20,7 +20,7 @@ class Received extends React.Component {
                                  cE('td', {key:10*i+1}, t.from),
                                  cE('td', {key:10*i+4}, t.msg),
                                  cE('td', {key:10*i+7},
-                                    (new Date(t.time)).toLocaleString()),
+                                    (new Date(t.time)).toLocaleString())
                                 )
                              );
         };
