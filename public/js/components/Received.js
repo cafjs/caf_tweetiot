@@ -12,7 +12,7 @@ class Received extends React.Component {
 
     render() {
         const renderRows = () => {
-            const tweets = (this.props.tweets || []).sort(
+            const tweets = [...(this.props.tweets || [])].sort(
                 (a, b) => (b.time - a.time)
             );
             return tweets.map((t, i) =>
